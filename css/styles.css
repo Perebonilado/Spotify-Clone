@@ -1,0 +1,396 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    font-family: sans-serif;
+    color: #fff;
+    background: #AAAAAA;
+    font-weight: bold;
+}
+
+
+/* utilities */
+
+.p-y { padding: 1.5rem 0; }
+
+#main {
+    height: 70vh;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #151514;
+    background: -webkit-linear-gradient(bottom, #151514, #4E4B4D);
+    background: -moz-linear-gradient(bottom, #151514, #4E4B4D);
+    background: linear-gradient(to top, #151514, #4E4B4D);
+    position: relative;
+    z-index: 1;
+}
+
+/* playlist modal */
+
+#modal-toggler-bx {
+    width: 260px;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    
+}
+
+#modal-toggler{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+    padding: 0 1rem;
+    position: relative;
+    margin-top: -12px;
+    cursor: pointer;
+    left: 14px;
+}
+
+#modal-toggler:hover div::before {
+        border-color: limegreen;
+}
+
+#modal-toggler:hover div::after {
+        border-color: limegreen;
+}
+
+#modal-toggler:hover div {
+        border-color: limegreen;
+}
+
+#modal-toggler:hover i {
+        color: limegreen;
+}
+
+#modal-toggler-icon{
+    position: absolute;
+    transform: scale(.2);
+    top: 1px;
+    right: 24px;
+}
+
+#modal-toggler>div{
+    border: 1px solid #fff;
+    width: 15px;
+    position: relative;
+}
+
+#modal-toggler>div::before{
+    content: ' ';
+    position: absolute;
+    border: 1px solid #fff;
+    width: 13px;
+    left: -1px;
+    top: 5px;
+}
+
+#modal-toggler>div::after{
+    content: ' ';
+    position: absolute;
+    border: 1px solid #fff;
+    width: 8px;
+    left: 4px;
+    top: -7px;
+}
+
+#playlist-modal {
+    width: 300px;
+    height: 70vh;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    background-color: #000;
+    padding:.5rem 1rem;
+    display: none;
+    opacity: 0;
+    transition: opacity .2s ease-in;
+}
+
+
+#now-playing-heading{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#now-playing-artiste {
+    font-size: 11px;
+    color: grey ;
+}
+
+#now-playing-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: limegreen;
+}
+
+.now-playing-close{
+    flex: 1;
+    cursor: pointer;
+}
+
+.now-playing-close:hover {
+    color: limegreen;
+}
+
+#now-playing-album-title{
+    flex: 19;
+    text-align: center;
+}
+
+#now-playing-bx>h5{
+    margin-bottom: 15px;
+}
+
+#now-playing-specifics{
+    display: flex;
+}
+
+#now-playing-cover-bx{
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+#now-playing-cover-bx>img{
+    width: 100%;
+    height: 100%;
+}
+
+#now-playing-body {
+    margin-top: 15px;
+}
+
+#now-playing-body>h5{
+    margin-bottom: 10px;
+}
+
+.playlist-song{
+    margin-bottom: 5px;
+}
+
+#tracklist{
+    max-height: 250px;
+    overflow: scroll;
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+.track-title{
+    font-size: 14px;
+    cursor: pointer;
+    padding-right: .5rem;
+}
+
+.track-title:hover{
+    color: limegreen;
+}
+
+
+.playlist-song>div span{
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.track-artiste {
+    font-size: 10px;
+    color: grey;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.playlist-song{ 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: .3px solid rgba(197, 195, 195, 0.384);
+    cursor: pointer;
+}
+
+.playlist-song div {
+    display: flex;
+}
+
+
+
+
+/* album art */
+
+#album-art-bx {
+    width: 260px;
+    height: 260px;
+}
+
+#album-art {
+    width: 100%;
+    height: 100%;
+}
+
+/* song details */
+
+#time-container{
+    width: 260px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.time{
+    font-size: 12px;
+    color: grey;
+}
+
+#song-details {
+   
+    width: 260px;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+#title-artiste{
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: .2rem;
+}
+
+#title-artiste >div{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+#song-title {
+    font-weight: bold;  
+    font-size: 13px; 
+    padding-right: .5rem;
+}
+
+#song-feature {
+    font-size: 13px;
+    overflow-y: hidden;
+}
+
+#artiste-name {
+    font-size: 12px;
+}
+
+.progress-container{
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    cursor: pointer;
+}
+
+
+
+/* like button */
+
+#like-btn-cont {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#like-btn:hover {
+    color: rgb(53, 163, 53);
+    cursor: pointer;
+}
+
+
+/* controls */
+
+.controls-bx{
+    width: 260px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls-bx i {
+    cursor: pointer;
+}
+
+#play-song{
+    transform: scale(2);
+}
+
+#play-song:hover {
+    color: rgb(53, 163, 53);
+}
+
+#rewind-btn:hover {
+    color: rgb(53, 163, 53);
+}
+
+#fast-forward:hover {
+    color: rgb(53, 163, 53);
+}
+
+#random-song:hover {
+    color: rgb(53, 163, 53);
+}
+
+#repeat-all:hover {
+    color: rgb(53, 163, 53);
+}
+
+.shuffle-active {
+    color: rgb(53, 163, 53);
+}
+
+.repeat-active{
+    color: rgb(53, 163, 53);
+}
+
+
+/* progress-bar */
+
+.progress-container {
+    background-color: rgba(192, 189, 189, 0.521);
+    border-radius: 20px;
+    width: 260px;
+    height: 3px;
+}
+
+#progress-bar{
+    border-radius: 20px;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+}
+
+#progress-bar::before {
+    content: ' ';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
